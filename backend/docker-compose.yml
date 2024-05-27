@@ -1,0 +1,20 @@
+services:
+  web:
+    container_name: taleowlai
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=
+    volumes:
+      - .:/app
+      - ./stores:/app/stores
+      - ./static:/app/static
+      - ./books:/app/books
+      - ./logs:/app/logs
+
+volumes:
+  stores:
+  static:
+  books:
+  logs:
